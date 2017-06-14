@@ -33,18 +33,18 @@
             e.preventDefault();
 
             var form = $(this);
-            var message = form.find('input[name="message"]').val();
+            var message = form.find('input[name="message"]');
 
-            $.post('/message', {message: message})
+            $.post('/message', {message: message.val()})
                 .done(function () {
-
+                    return alert('Сообщение отправленно');
                 })
                 .fail(function () {
-
+                    return alert('Ошибка');
                 })
             ;
 
-            e.preventDefault();
+            message.val('');
         });
     </script>
 </body>
