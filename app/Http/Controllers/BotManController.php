@@ -32,7 +32,7 @@ class BotManController extends Controller
      */
     public function checkDomain(BotMan $bot, string $domain): BotMan
     {
-        $bot->typesAndWaits(3);
+        $bot->typesAndWaits(2);
 
         try {
             $domainSSL = new DomainSSL($domain);
